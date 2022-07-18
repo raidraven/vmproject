@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<form action="" method="POST"  enctype="multipart/form-data">{% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" value="作成する">
+</form>
+  <h1>test</h1>
+
+  <head>
+    <title>自販機マップ</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwSPyH0ry1KnWPf88npfxk0yIsZupbCTE&callback=initMap" async defer></script><!-- YOUR_API_KEYの部分は取得した APIキーで置き換えます --> 
+  </head>
+  <body>
+    <form action="#" method="post">
+      <p>メーカー<br><input type="text" name="name"></p>
+      <p>画像<br><input type="text" name="mail"></p>
+    </form>
+    <button type="button" id="cl">現在地取得</button>
+    <input id="address" value="">
+    <button type="button" id="searchb">場所検索</button>
+  <div id="gmap" style="height:400px;width:600px"></div> <!-- 地図を表示する領域 -->
+  
+  
+  <script src="googleapi.js"></script>
+  </body>
+
+  {% endblock content %}
+
+  {% block extrajs %}
+  <script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
+  <script>
+
+/*function getCookie(name) {
+      var cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = jQuery.trim(cookies[i]);
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+  }
+
+  var csrftoken = getCookie('csrftoken');
+
+  function csrfSafeMethod(method) {
+      // these HTTP methods do not require CSRF protection
+      return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+
+  $.ajaxSetup({
+      beforeSend: function (xhr, settings) {
+          if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+              xhr.setRequestHeader("X-CSRFToken", csrftoken);
+          }
+      }
+  });*/
+
+    //送信ボタンで呼ばれる
+    /*$('form').on('submit', e => {
+        // デフォルトのイベントをキャンセルし、ページ遷移しないように!
+        //e.preventDefault();
+        $.ajax({
+            'url': '{% url "create" %}',
+            'type': 'POST',
+            'data': $('#ajax-add-post').serializeArray(),
+            'dataType': 'html'
+        }).done( response => {
+          console.log('成功')
+          console.log($('#ajax-add-post').serializeArray())
+        });
+    });*/
+  </script>
+  {% endblock %}

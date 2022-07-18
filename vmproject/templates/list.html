@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block header %}
+{% endblock header %}
+{% block content %}
+<div class="container">
+{% for item in object_list %}
+  <div class="card">
+    <h5 class="card-header">{{ item.category }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ item.title }}</h5>
+      <h6 class="card-title">{{ item.postdate }}</h6>
+      <img src="{{ item.images.url }}" alt="写真" title="空" width="300" height="200">
+    </a>
+  </div>
+</div>
+{% endfor %}
+{{ object }}
+</div>
+{% endblock content %}
+<h1>test</h1>
+ 

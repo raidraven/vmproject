@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>自販機マップ</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwSPyH0ry1KnWPf88npfxk0yIsZupbCTE&callback=initMap" async defer></script><!-- YOUR_API_KEYの部分は取得した APIキーで置き換えます --> 
+  </head>
+  <body>
+    <form action="#" method="post">
+      <p>メーカー<br><input type="text" name="name"></p>
+      <p>画像<br><input type="text" name="mail"></p>
+    </form>
+    <button type="button" id="cl">現在地取得</button>
+    <input id="address" value="">
+    <button type="button" id="searchb">場所検索</button>
+  <div id="gmap" style="height:400px;width:600px"></div> <!-- 地図を表示する領域 -->
+  
+  
+  <script src="googleapi.js"></script>
+  </body>
+</html>
